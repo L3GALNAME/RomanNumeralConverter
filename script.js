@@ -59,6 +59,7 @@ function value_check(val) {
 }
 
 function shake_offset(element, amt=10, timer=0) {
+  // Makes the text shake for a bit
   element.style.paddingLeft = `${Math.sin(timer*1)*amt}px`
 
   if (amt > 0) {
