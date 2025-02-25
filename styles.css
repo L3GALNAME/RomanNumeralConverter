@@ -1,3 +1,8 @@
+:root {
+  --collumn-indent: 20px;
+  --fill-width: calc(100% - ((var(--collumn-indent) * 2) + max(10px, 6%)));
+}
+
 .lexend-deca {
   font-family: "Lexend Deca", serif;
   font-optical-sizing: auto;
@@ -13,31 +18,92 @@ body {
   padding: 0;
 }
 
-h1 {
-  font-family: 'Times New Roman', Times, serif;
-  margin-top: max(50vh - 2.8em, 25px);
+.main {
+  width: 50%;
+  height: 100%;
+  background: #45c3f5;
+  padding: 1% 4px 4%;
+  border-radius: 20px;
+  margin: max(35vh - 2.8em, 15px) auto 0;
+  box-shadow: 0 8px 10px 10px rgba(0,0,0,0.2);
 }
 
+h1 {
+  font-family: 'Times New Roman', Times, serif;
+  /*padding-top: max(50vh - 2.8em, 25px);*/
+}
+
+input {
+  border-radius: 6px;
+  border-style: none;
+  padding: 4px;
+}
+
+button {
+  border-radius: 6px;
+  border-style: none;
+  padding: 4px;
+  background: #fff;
+  margin-bottom: 1em;
+  transition-duration: 0.125s;
+}
+
+button:hover {
+  background: #000;
+  color: #45c3f5;
+}
+
+button:active {
+  color: #fff;
+}
+
+/* Background section */
+
 .bg {
-  margin-top: min(-49vh + 1px, -105px);
+  /*margin-top: min(-49vh + 1px, -105px);*/
+  margin: 0;
+  padding: 0;
   width: 100%;
   height: 100%;
   position: absolute;
+  top: 0px;
+  left: 0px;
   z-index: -1;
 }
 
-.background .left {
-  background: #73231a;
-  width: 60%;
-  margin-left: 10vw;
+.bg .left {
+  padding-left: 5%;
+  width: 25%;
+  height: 100%;
+  position: absolute;
 }
-.background .right {
-  background: #73231a;
-  width: 20%;
-  margin-left: 80vw;
+
+.bg .right {
+  padding-left: 70%;
+  width: 25%;
+  height: 100%;
+  position: absolute;
 }
 
 #bottom {
-  width: 100%;
-  height: 10%;
+  border-bottom: min(100px, 25vh) solid #73231a;
+  border-left: var(--collumn-indent) solid transparent;
+  border-right: var(--collumn-indent) solid transparent;
+  height: 0;
+  width: calc(100% - (var(--collumn-indent) * 2));
+}
+
+#top {
+  border-top: min(100px, 25vh) solid #73231a;
+  border-left: var(--collumn-indent) solid transparent;
+  border-right: var(--collumn-indent) solid transparent;
+  height: 0;
+  width: calc(100% - (var(--collumn-indent) * 2));
+}
+
+#fill {
+  height: calc(100% - (min(100px, 25vh) * 2));
+  width: var(--fill-width);
+  background: #73231a;
+  margin: 0 auto;
 }
